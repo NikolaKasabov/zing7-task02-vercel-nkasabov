@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="py-6 bg-[#F4F4F4]">
+    <header className="py-6 bg-secondary">
       <div className="max-w-[1180px] mx-auto px-5 flex items-center lg:gap-x-[100px] max-lg:justify-between">
         <Link href="/">
           <Image src={logo} alt="logo" />
