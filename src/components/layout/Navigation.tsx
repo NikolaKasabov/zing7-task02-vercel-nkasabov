@@ -58,7 +58,7 @@ export default function Navigation() {
               key={link.id}
               href={link.path}
               className={`py-1 text-sm font-medium border-b-2 border-transparent hover:border-black max-lg:text-xl ${
-                pathname === link.path ? "border-black" : ""
+                pathname === link.path ? "!border-black" : ""
               }`}
             >
               {link.text}
