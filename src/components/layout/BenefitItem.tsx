@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from "react";
 
 export default function BenefitItem({ key, getIcon, title, text }: any) {
   const [isHovered, setIsHovered] = useState(false);
-  const wrapper = useRef();
+  const wrapper: any = useRef();
 
   useEffect(() => {
-    const el = wrapper.current;
+    const el: any = wrapper.current;
 
     function handleMouseEnter() {
       setIsHovered(true);
@@ -16,12 +16,16 @@ export default function BenefitItem({ key, getIcon, title, text }: any) {
       setIsHovered(false);
     }
 
-    el.addEventListener("mouseenter", handleMouseEnter);
-    el.addEventListener("mouseleave", handleMouseLeave);
+    if (el) {
+      el.addEventListener("mouseenter", handleMouseEnter);
+      el.addEventListener("mouseleave", handleMouseLeave);
+    }
 
     return () => {
-      el.removeEventListener("mouseenter", handleMouseEnter);
-      el.removeEventListener("mouseleave", handleMouseLeave);
+      if (el) {
+        el.removeEventListener("mouseenter", handleMouseEnter);
+        el.removeEventListener("mouseleave", handleMouseLeave);
+      }
     };
   }, []);
 
