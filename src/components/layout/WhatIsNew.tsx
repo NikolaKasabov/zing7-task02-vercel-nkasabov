@@ -24,7 +24,7 @@ export default function WhatIsNew() {
   ];
 
   return (
-    <section className="py-[120px] max-lg:py-[60px]">
+    <section className="py-[115px] max-lg:py-[60px]">
       <div className="max-w-[1180px] mx-auto px-5">
         <div className="flex justify-between max-lg:flex-col max-lg:items-center max-lg:gap-6">
           <h2 className="text-[64px] font-bold leading-[1.156] tracking-[-0.89px] max-lg:text-[40px] max-lg:text-center">
