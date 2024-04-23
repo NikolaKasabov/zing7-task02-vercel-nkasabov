@@ -1,6 +1,6 @@
 import Link from "next/link";
 import image1 from "../../../public/images/whatIsNew1.png";
-import image2 from "../../../public/images/whatIsNew2.png";
+import image2 from "../../../public/images/whatIsNew1.png";
 import WhatIsNewItem from "./WhatIsNewItem";
 
 export default function WhatIsNew() {
