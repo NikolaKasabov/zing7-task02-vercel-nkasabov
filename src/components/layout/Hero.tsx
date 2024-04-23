@@ -59,7 +59,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-[1180px] mx-auto px-5 mt-[70px] mb-[88px] flex flex-wrap justify-center items-center gap-[70px] max-sm:mt-0">
+      <div className="max-w-[1180px] mx-auto px-5 mt-[70px] mb-[88px] flex flex-wrap justify-center items-center gap-[72px] max-sm:mt-0">
         <p className="text-base font-medium tracking-[-0.22px]">Trusted by 1,000+ customers</p>
         <Image src={google} alt="google" />
         <Image src={atlassian} alt="atlassian" />
