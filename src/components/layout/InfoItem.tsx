@@ -7,7 +7,7 @@ export default function InfoItem({ tagText, title, text, listItems, image, isIma
       <div className="px-2 py-[6px] inline-block text-sm font-bold tracking-[1.4px] uppercase rounded bg-[#FFE377]">
         {tagText}
       </div>
-      <h3 className="mt-[15px] text-5xl font-bold leading-[1.2] tracking-[-0.67px]">{title}</h3>
+      <h3 className="mt-[15px] text-5xl font-bold leading-[1.2] tracking-[-0.67px] max-lg:text-[40px]">{title}</h3>
       <p className="mt-6 text-lg leading-[28px]">{text}</p>
       <ul className="mt-5 space-y-4">
         {listItems.map((item: string, index: number) => (
