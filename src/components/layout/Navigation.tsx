@@ -49,7 +49,7 @@ export default function Navigation() {
   return (
     <>
       <nav
-        className="lg:!flex items-center justify-between grow relative z-[100] max-lg:pt-16 max-lg:fixed max-lg:inset-0 max-lg:flex-col max-lg:justify-start max-lg:gap-[36px] max-lg:bg-[#F4F4F4]"
+        className="lg:!flex items-center justify-between grow relative z-[100] max-lg:pt-16 max-lg:fixed max-lg:inset-0 max-lg:flex-col max-lg:justify-start max-lg:gap-[36px] max-lg:bg-secondary"
         style={{ display: showMobileNav ? "flex" : "none" }}
       >
         <ul className="flex gap-[36px] max-lg:flex-col max-lg:items-center">
