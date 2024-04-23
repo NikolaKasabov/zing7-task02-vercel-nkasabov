@@ -39,7 +39,9 @@ export default function Benefit() {
 
         <div className="mt-[76px] flex flex-wrap justify-center gap-x-2 gap-y-6">
           {items.map((item) => (
-            <BenefitItem key={item.id} getIcon={item.getIcon} title={item.title} text={item.text} />
+            <div key={item.id}>
+              <BenefitItem getIcon={item.getIcon} title={item.title} text={item.text} />
+            </div>
           ))}
         </div>
       </div>

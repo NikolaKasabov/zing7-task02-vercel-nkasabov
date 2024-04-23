@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export default function BenefitItem({ key, getIcon, title, text }: any) {
+export default function BenefitItem({ getIcon, title, text }: any) {
   const [isHovered, setIsHovered] = useState(false);
   const wrapper: any = useRef();
 
@@ -31,7 +31,6 @@ export default function BenefitItem({ key, getIcon, title, text }: any) {
 
   return (
     <article
-      key={key}
       ref={wrapper}
       className="max-w-[374px] w-full px-8 py-16 rounded-xl bg-[#1E0A57] hover:bg-[#FFE377] hover:text-black hover:translate-y-[-12px] transition-transform group"
     >
