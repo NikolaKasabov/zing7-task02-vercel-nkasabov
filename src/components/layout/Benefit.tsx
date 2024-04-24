@@ -30,8 +30,8 @@ export default function Benefit() {
     <section className="bg-primary text-white">
       <div className="max-w-[1180px] mx-auto px-5 pt-[124px] pb-[130px]">
         <div className="flex gap-7 max-lg:flex-col max-lg:items-center max-lg:text-center">
-          <h2 className="max-w-[560px] text-5xl font-bold">Here&apos;s how Roooby can benefit your business</h2>
-          <p className="max-w-[490px] mt-5 text-lg leading-7">
+          <h2 className="max-w-[560px] text-5xl font-bold leading-[1.2]">Here&apos;s how Roooby can benefit your business</h2>
+          <p className="max-w-[490px] mt-10 text-lg leading-7">
             Build more meaningful and lasting relationships — better understand their needs, identify new opportunities
             to help, address any problems faster.
           </p>
