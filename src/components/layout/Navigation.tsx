@@ -22,7 +22,7 @@ export default function Navigation() {
     {
       id: 1,
       text: "Product",
-      path: "/product",
+      path: "/",
     },
     {
       id: 2,
@@ -69,7 +69,7 @@ export default function Navigation() {
           <Button secondary className="max-lg:text-xl max-lg:h-11">
             Log In
           </Button>
-          <Button primary className="max-lg:text-xl max-lg:h-11" onClick={() => console.log("clicked")}>
+          <Button primary className="max-lg:text-xl max-lg:h-11">
             Try for Free
           </Button>
         </div>
