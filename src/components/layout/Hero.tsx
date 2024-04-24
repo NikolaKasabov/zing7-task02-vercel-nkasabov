@@ -23,7 +23,7 @@ export default function Hero() {
     <section className="bg-secondary overflow-hidden">
       <div className="max-w-[1180px] mx-auto px-5 pt-[70px] pb-[90px] relative max-xl:flex max-xl:flex-col max-xl:gap-[70px] max-xl:text-center">
         <div className="max-xl:flex max-xl:flex-col max-xl:items-center">
-          <h1 className="max-w-[642px] text-[64px] font-bold tracking-[0.89px] leading-[74px] text-primary max-sm:text-[40px] max-sm:leading-[50px]">
+          <h1 className="max-w-[642px] text-[64px] font-bold tracking-[-0.89px] leading-[74px] text-primary max-sm:text-[40px] max-sm:leading-[50px]">
             Bringing companies and customers together, anywhere
           </h1>
           <p className="max-w-[478px] mt-5 text-lg leading-7">

@@ -66,10 +66,10 @@ export default function Navigation() {
           ))}
         </ul>
         <div className="flex gap-5 max-lg:flex-col max-lg:gap-9">
-          <Button primary className="max-lg:text-xl max-lg:h-11">
+          <Button secondary className="max-lg:text-xl max-lg:h-11">
             Log In
           </Button>
-          <Button secondary className="max-lg:text-xl max-lg:h-11" onClick={() => console.log("clicked")}>
+          <Button primary className="max-lg:text-xl max-lg:h-11" onClick={() => console.log("clicked")}>
             Try for Free
           </Button>
         </div>
