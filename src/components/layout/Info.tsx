@@ -1,6 +1,7 @@
 import info1 from "../../../public/images/info1.png";
 import info2 from "../../../public/images/info2.png";
 import info3 from "../../../public/images/info3.png";
+import Button from "../ui/Button";
 import InfoItem from "./InfoItem";
 
 export default function Info() {
@@ -30,6 +31,14 @@ export default function Info() {
       ],
       image: info2,
       isImageOnTheRight: false,
+      children: (
+        <div className="max-w-[457px] w-[90%] min-h-[80px] py-3 bg-primary rounded-xl flex flex-wrap justify-center items-center gap-[12px] absolute left-[50%] bottom-[30px] translate-x-[-50%]">
+          <p className="text-lg font-bold tracking-[-0.25px] text-white text-center">Automate your sales & marketing</p>
+          <Button primary className="!h-[56px] !px-5 !text-lg !font-bold !bg-[#00CC61] hover:!bg-[#40b87a] !rounded-lg">
+            Start now
+          </Button>
+        </div>
+      ),
     },
     {
       id: 3,
@@ -51,7 +60,7 @@ export default function Info() {
       <div className="max-w-[1180px] mx-auto px-5 space-y-[120px] max-lg:space-y-[60px]">
         {info.map((item) => (
           <div key={item.id}>
-            <InfoItem {...item} />
+            <InfoItem {...item}>{item.children}</InfoItem>
           </div>
         ))}
       </div>

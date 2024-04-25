@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { IoMdCheckmark } from "react-icons/io";
 
-export default function InfoItem({ tagText, title, text, listItems, image, isImageOnTheRight }: any) {
+export default function InfoItem({ tagText, title, text, listItems, image, isImageOnTheRight, children }: any) {
   const info = (
     <div className="max-w-[485px]">
       <div className="px-2 py-[6px] inline-block text-sm font-bold tracking-[1.4px] uppercase rounded bg-[#FFE377]">
@@ -20,7 +20,12 @@ export default function InfoItem({ tagText, title, text, listItems, image, isIma
     </div>
   );
 
-  const img = <Image src={image} alt={tagText} />;
+  const img = (
+    <div className="relative">
+      <Image src={image} alt={tagText} />
+      {children}
+    </div>
+  );
 
   return (
     <article className="flex justify-between items-center pt-[50px] border-t-[1px] border-[#787878] max-lg:flex-col max-lg:gap-10">
