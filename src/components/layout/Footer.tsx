@@ -1,3 +1,4 @@
+'use client';
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/images/logo.png";
@@ -5,9 +6,15 @@ import twitter from "../../../public/images/twitter.png";
 import facebook from "../../../public/images/facebook.png";
 import linkedin from "../../../public/images/linkedin.png";
 import { GrLanguage } from "react-icons/gr";
-import { FaChevronDown } from "react-icons/fa6";
+import { useState } from "react";
 
 export default function Footer() {
+  const [language, setLanguage] = useState('english');
+
+  function handleSelectChange(ev: any) {
+    setLanguage(ev.target.value);
+  }
+
   return (
     <footer className="px-5">
       <div className="max-w-[1180px] mx-auto px-5 flex flex-wrap gap-x-[110px] gap-y-[50px] max-sm:flex-col max-sm:items-center max-sm:text-center pt-[120px] pb-[100px] max-lg:py-[60px]">
@@ -119,7 +126,7 @@ export default function Footer() {
 
       <div className="max-w-[1360px] mx-auto h-[1px] bg-[#DFDFDF]"></div>
 
-      <div className="max-w-[1180px] mx-auto px-5 py-[40px]  flex justify-between items-center max-[800px]:flex-col max-[800px]:gap-[50px]">
+      <div className="max-w-[1180px] mx-auto px-5 pt-[40px] pb-[60px] flex justify-between items-center max-[800px]:flex-col max-[800px]:gap-[50px]">
         <p className="text-sm tracking-[0.2px]">&copy; Copyright 2024</p>
 
         <ul className="flex gap-[40px] text-sm tracking-[0.2px] max-[800px]:flex-col max-[800px]:text-center max-[800px]:gap-[20px]">
@@ -134,10 +141,12 @@ export default function Footer() {
           </li>
         </ul>
 
-        <div className="flex items-center">
+        <div className="flex items-center gap-[8px]">
           <GrLanguage size={20} color="#787878" />
-          <p className="ml-3 mr-1 text-sm tracking-[0.2px]">English</p>
-          <FaChevronDown size={10} color="#787878" />
+          <select name="language" onChange={handleSelectChange} value={language}>
+            <option value="english">English</option>
+            <option value="bulgarian">Bulgarian</option>
+          </select>
         </div>
       </div>
     </footer>
