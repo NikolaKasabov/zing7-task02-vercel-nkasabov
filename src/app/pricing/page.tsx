@@ -4,7 +4,7 @@ import Footer from "@/components/layout/Footer";
 import Plans from "@/components/layout/Plans";
 import FAQ from "@/components/layout/FAQ";
 
-export default function Pricing() {
+export default function PricingPage() {
   return (
     <>
       <Header />
