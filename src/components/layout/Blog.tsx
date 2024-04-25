@@ -1,8 +1,10 @@
 "use client";
-import { useState } from "react";
-import { blogsData } from "../../../public/blogData";
+import { Fragment, useState } from "react";
+import { allBlogs } from "../../../public/blogData";
 import Tabs from "../ui/Tabs";
 import BlogItemBig from "./BlogItemBig";
+import BlogItemNormal from "./BlogItemNormal";
+import BlogItemSmall from "./BlogItemSmall";
 
 const tabs = [
   {
@@ -32,11 +34,19 @@ const tabs = [
 ];
 
 export default function Blog() {
-  const [selectedBlogType, setSelectedBlogType] = useState(tabs[0].title);
+  const [selectedBlogsType, setSelectedBlogsType] = useState(tabs[0].title);
 
   function handleTabClick(tabTitle: string) {
-    setSelectedBlogType(tabTitle);
+    setSelectedBlogsType(tabTitle);
   }
+
+  const filteredBlogs = allBlogs.filter((blogItem) => {
+    if (selectedBlogsType === "all articles") {
+      return true;
+    } else if (blogItem.type.toLowerCase() === selectedBlogsType) {
+      return true;
+    } else return false;
+  });
 
   return (
     <>
@@ -56,19 +66,47 @@ export default function Blog() {
         <div className="max-w-[1180px] mx-auto px-5 pt-[120px] pb-[160px] max-lg:py-[60px]">
           {/* 1 big blogItem */}
           <div>
-            {blogsData.slice(0, 1).map((item) => (
-              <BlogItemBig {...item} />
+            {filteredBlogs.slice(0, 1).map((item, index) => (
+              <Fragment key={index}>
+                <BlogItemBig {...item} />
+              </Fragment>
             ))}
           </div>
 
           {/* 6 normal blogItems */}
-          <div></div>
+          <div className="mt-[95px] grid grid-cols-3 gap-x-[30px] gap-y-[117px] max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-[40px]">
+            {filteredBlogs.slice(1, 7).map((item, index) => (
+              <Fragment key={index}>
+                <BlogItemNormal {...item} />
+              </Fragment>
+            ))}
+          </div>
 
           {/* 1 normal and 3 small blogItems */}
-          <div></div>
+          <div className="mt-[117px] grid grid-cols-2 gap-x-[30px] gap-y-[30px] max-sm:grid-cols-1 max-sm:mt-[50px]">
+            {filteredBlogs.slice(7, 8).map((item, index) => (
+              <Fragment key={index}>
+                <BlogItemNormal {...item} />
+              </Fragment>
+            ))}
+
+            <div>
+              {filteredBlogs.slice(8, 11).map((item, index) => (
+                <Fragment key={index}>
+                  <BlogItemSmall {...item} />
+                </Fragment>
+              ))}
+            </div>
+          </div>
 
           {/* 3 normal blogItems */}
-          <div></div>
+          <div className="mt-[95px] grid grid-cols-3 gap-x-[30px] max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-[40px]">
+            {filteredBlogs.slice(11, 14).map((item, index) => (
+              <Fragment key={index}>
+                <BlogItemNormal {...item} />
+              </Fragment>
+            ))}
+          </div>
         </div>
       </section>
     </>

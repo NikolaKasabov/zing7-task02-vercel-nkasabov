@@ -10,7 +10,7 @@ import blog9 from '../public/images/blog9.png';
 import blog10 from '../public/images/blog10.png';
 import blog11 from '../public/images/blog11.png';
 
-export const blogsData = [
+export const allBlogs = [
   {
     id: 1,
     type: 'service',
@@ -100,18 +100,18 @@ export const blogsData = [
     image: blog11,
   }, {
     id: 12,
-    type: 'Service',
+    type: 'product',
     title: 'Sales Funnels: Definition, Process, Stages and Examples',
     date: '01 Dec 2022',
     author: 'Edith Rose',
-    image: blog9,
+    image: blog10,
   }, {
     id: 13,
     type: 'Sales',
     title: 'What is a sales and how do you build one?',
     date: '29 Mar 2022',
     author: 'Amanda Brooks',
-    image: blog10,
+    image: blog11,
   }, {
     id: 14,
     type: 'Service',
@@ -127,5 +127,21 @@ export const blogsData = [
     date: '30 Jan 2022',
     author: 'Alice Washington',
     image: blog1,
+  },
+  {
+    id: 16,
+    type: 'Marketing',
+    title: 'Email marketing best practices: 10 experts share their email tips',
+    date: '23 Nov 2023',
+    author: 'Joshua Nash',
+    image: blog10,
+  },
+  {
+    id: 17,
+    type: 'Marketing',
+    title: 'Email marketing best practices: 10 experts share their email tips',
+    date: '23 Nov 2023',
+    author: 'Joshua Nash',
+    image: blog4,
   },
 ];
