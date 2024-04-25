@@ -36,8 +36,8 @@ export default function Navigation() {
     },
     {
       id: 4,
-      text: "Recources",
-      path: "/recources",
+      text: "Blog",
+      path: "/blog",
     },
     {
       id: 5,
