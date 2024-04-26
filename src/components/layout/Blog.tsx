@@ -5,6 +5,7 @@ import Tabs from "../ui/Tabs";
 import BlogItemBig from "./BlogItemBig";
 import BlogItemNormal from "./BlogItemNormal";
 import BlogItemSmall from "./BlogItemSmall";
+import { useRouter } from "next/navigation";
 
 const tabs = [
   {
@@ -35,10 +36,15 @@ const tabs = [
 
 export default function Blog() {
   const [selectedBlogsType, setSelectedBlogsType] = useState(tabs[0].title);
+  const router = useRouter();
 
   function handleTabClick(tabTitle: string) {
     setSelectedBlogsType(tabTitle);
   }
+
+  function handleBlogItemClick(blogId: any) {
+    router.push(`/blog/${blogId}`);
+  } 
 
   const filteredBlogs = allBlogs.filter((blogItem) => {
     if (selectedBlogsType === "all articles") {
@@ -68,7 +74,7 @@ export default function Blog() {
           <div>
             {filteredBlogs.slice(0, 1).map((item, index) => (
               <Fragment key={index}>
-                <BlogItemBig {...item} />
+                <BlogItemBig {...item} onClick={handleBlogItemClick} />
               </Fragment>
             ))}
           </div>
@@ -77,7 +83,7 @@ export default function Blog() {
           <div className="mt-[95px] grid grid-cols-3 gap-x-[30px] gap-y-[117px] max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-[40px]">
             {filteredBlogs.slice(1, 7).map((item, index) => (
               <Fragment key={index}>
-                <BlogItemNormal {...item} />
+                <BlogItemNormal {...item} onClick={handleBlogItemClick} />
               </Fragment>
             ))}
           </div>
@@ -86,14 +92,14 @@ export default function Blog() {
           <div className="mt-[117px] grid grid-cols-2 gap-x-[30px] gap-y-[30px] max-sm:grid-cols-1 max-sm:mt-[50px]">
             {filteredBlogs.slice(7, 8).map((item, index) => (
               <Fragment key={index}>
-                <BlogItemNormal {...item} />
+                <BlogItemNormal {...item} onClick={handleBlogItemClick} />
               </Fragment>
             ))}
 
             <div>
               {filteredBlogs.slice(8, 11).map((item, index) => (
                 <Fragment key={index}>
-                  <BlogItemSmall {...item} />
+                  <BlogItemSmall {...item} onClick={handleBlogItemClick} />
                 </Fragment>
               ))}
             </div>
@@ -103,7 +109,7 @@ export default function Blog() {
           <div className="mt-[95px] grid grid-cols-3 gap-x-[30px] max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-[40px]">
             {filteredBlogs.slice(11, 14).map((item, index) => (
               <Fragment key={index}>
-                <BlogItemNormal {...item} />
+                <BlogItemNormal {...item} onClick={handleBlogItemClick} />
               </Fragment>
             ))}
           </div>
