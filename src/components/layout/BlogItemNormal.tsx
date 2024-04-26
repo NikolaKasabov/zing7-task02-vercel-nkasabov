@@ -11,6 +11,7 @@ export default function BlogItemNormal({ id, type, title, date, author, image, o
         <p>{date},</p>
         <p className="text-[#787878]">&nbsp;by {author}</p>
       </div>
+      {id}
     </article>
   );
 }

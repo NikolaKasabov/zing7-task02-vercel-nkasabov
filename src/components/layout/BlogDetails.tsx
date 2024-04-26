@@ -3,18 +3,23 @@ import { useParams, useRouter } from "next/navigation";
 import { allBlogs } from "../../../public/blogData";
 import BlogItemSmallInDetails from "./BlogItemSmallInDetails";
 import Quote from "./Quote";
-import image from '../../../public/images/blogDetails.png';
+import image from "../../../public/images/blogDetails.png";
 import BlogDetailsAuthor from "./BlogDetailsAuthor";
-import blogDetailsAuthorImage from '../../../public/images/blogDetailsAuthorImage.png';
+import blogDetailsAuthorImage from "../../../public/images/blogDetailsAuthorImage.png";
+import { Fragment } from "react";
+import BlogItemNormal from "./BlogItemNormal";
 
 export default function BlogDetails() {
   const router = useRouter();
-
   const { blogId }: any = useParams();
   const blog = allBlogs[blogId - 1];
 
   if (!blog) {
     router.push("/blog");
+  }
+
+  function handleBlogItemClick(blogId: any) {
+    router.push(`/blog/${blogId}`);
   }
 
   return (
@@ -91,7 +96,30 @@ export default function BlogDetails() {
             nulla pariatur?&quot;
           </p>
 
-          <BlogDetailsAuthor name={blog.author} jobTitle={"Founder & CEO"} image={blogDetailsAuthorImage} className='mt-[20px]' />
+          {blog && (
+            <BlogDetailsAuthor
+              name={blog.author}
+              jobTitle={"Founder & CEO"}
+              image={blogDetailsAuthorImage}
+              className="mt-[20px]"
+            />
+          )}
+        </div>
+      </section>
+
+      <section className="py-[120px] bg-secondary px-[20px] max-lg:py-[60px]">
+        <div className="max-w-[1140px] mx-auto">
+          <h2 className="text-[64px] font-bold leading-[1.1563] tracking-[-0.89px] max-lg:text-[40px] max-lg:text-center">
+            More from this topic
+          </h2>
+
+          <div className="mt-[70px] grid grid-cols-3 gap-x-[30px] max-lg:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-y-[40px] max-lg:mt-[40px]">
+            {allBlogs.slice(5, 8).map((item, index) => (
+              <Fragment key={index}>
+                <BlogItemNormal {...item} onClick={handleBlogItemClick} />
+              </Fragment>
+            ))}
+          </div>
         </div>
       </section>
     </>

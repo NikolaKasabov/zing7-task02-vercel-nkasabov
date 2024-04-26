@@ -4,7 +4,7 @@ export default function BlogItemSmallInDetails({ id, type, title, date, author, 
       <p className="text-sm font-bold text-[#787878] tracking-[1.4px] uppercase">{type}</p>
       <div className="mt-[13px] h-[1px] bg-[#787878]"></div>
       <h2 className="mt-[14px] text-5xl font-bold leading-[1.2083] tracking-[-0.67px] max-lg:text-[40px]">
-        The Psychology of Short-Form Content: Why We Love Bite
+        {title}
       </h2>
       <div className="mt-[18px] flex font-medium">
         <p>{date},</p>
