@@ -22,7 +22,7 @@ export default function BlogDetails() {
         </div>
 
         <div className="mt-[45px] max-w-[945px] mx-auto">
-          <Image src={blog.image} alt="blog post image" className="w-full" />
+          <Image src={blog?.image} alt="blog post image" className="w-full" />
         </div>
       </section>
 
