@@ -4,11 +4,7 @@ import { toast } from "react-toastify";
 import Image from "next/image";
 import Button from "../ui/Button";
 import image from "../../../public/images/hero-image.png";
-import google from '../../../public/images/Google.png';
-import atlassian from "../../../public/images/Atlassian.png";
-import canon from "../../../public/images/Canon.png";
-import walmart from "../../../public/images/Walmart.png";
-import amazon from "../../../public/images/Amazon.png";
+import CustomersLogos from "./CustomersLogos";
 
 export default function Hero() {
   const [email, setEmail] = useState("");
@@ -59,13 +55,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="max-w-[1180px] mx-auto px-5 mt-[70px] mb-[88px] flex flex-wrap justify-center items-center gap-[72px] max-sm:mt-0">
-        <p className="text-base font-medium tracking-[-0.22px]">Trusted by 1,000+ customers</p>
-        <Image src={google} alt="google" />
-        <Image src={atlassian} alt="atlassian" />
-        <Image src={canon} alt="canon" />
-        <Image src={walmart} alt="walmart" />
-        <Image src={amazon} alt="amazon" />
+      <div className="max-w-[1180px] mx-auto mt-[70px] mb-[88px] px-5 max-sm:mt-0 max-lg:mb-[60px]">
+        <CustomersLogos text="Trusted by 1,000+ customers" />
       </div>
     </section>
   );

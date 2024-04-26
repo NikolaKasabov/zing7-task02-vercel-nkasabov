@@ -28,7 +28,7 @@ export default function Benefit() {
 
   return (
     <section className="bg-primary text-white">
-      <div className="max-w-[1180px] mx-auto px-5 pt-[124px] pb-[130px]">
+      <div className="max-w-[1180px] mx-auto px-5 pt-[124px] pb-[130px] max-lg:py-[60px]">
         <div className="flex gap-7 max-lg:flex-col max-lg:items-center max-lg:text-center">
           <h2 className="max-w-[560px] text-5xl font-bold leading-[1.2]">Here&apos;s how Roooby can benefit your business</h2>
           <p className="max-w-[490px] mt-10 text-lg leading-7">
