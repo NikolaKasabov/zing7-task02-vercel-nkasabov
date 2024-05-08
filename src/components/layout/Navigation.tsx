@@ -31,16 +31,11 @@ export default function Navigation() {
     },
     {
       id: 3,
-      text: "Company",
-      path: "/company",
-    },
-    {
-      id: 4,
       text: "Blog",
       path: "/blog",
     },
     {
-      id: 5,
+      id: 4,
       text: "Contact",
       path: "/contact",
     },
